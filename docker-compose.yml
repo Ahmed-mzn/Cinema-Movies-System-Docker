@@ -1,0 +1,41 @@
+version: '3.9'
+
+services:
+  movies_db:
+    image: postgres
+    volumes:
+      - ./movies_back-end/data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+
+  movies_back-end:
+    build: ./movies_back-end
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./movies_back-end:/code
+    ports:
+        - 8000:8000
+    depends_on:
+        - movies_db
+
+  movies_front-end_admin:
+    build: ./movies_front-end_admin
+    ports:
+      - "8181:8080"
+    volumes:
+      - "/movies_front-end_admin/app/node_modules"
+      - "./movies_front-end_admin:/app"
+    depends_on:
+      - movies_back-end
+
+  movies_front-end:
+    build: ./movies_front-end
+    ports:
+      - "8282:8080"
+    volumes:
+      - "/movies_front-end/app/node_modules"
+      - "./movies_front-end:/app"
+    depends_on:
+      - movies_back-end
