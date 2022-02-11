@@ -5,7 +5,7 @@
 This system is for manage a cinema, its consists of three apps :
 
 
-### API where we have all services those communicate with database :
+# API where we have all services those communicate with database :
 #### Technologies : 
 - Django
 - PostgreSQL
@@ -18,7 +18,7 @@ This system is for manage a cinema, its consists of three apps :
 - Bookings services
 - Payment procedure
 
-### Front-end public app
+# Front-end public app
 #### Technologies : 
 - Nodejs
 - Vue js
@@ -34,7 +34,7 @@ This system is for manage a cinema, its consists of three apps :
 - Dashboard (For those users having an account )
 - Payment for a booking
 
-### Front-end admin app
+# Front-end admin app
 #### Technologies : 
 - Nodejs
 - Vue js
