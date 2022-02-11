@@ -5,7 +5,8 @@
 This system is for manage a cinema, its consists of three apps :
 
 
-# API where we have all services those communicate with database :
+# API
+where we have all services those communicate with database
 #### Technologies : 
 - Django
 - PostgreSQL
